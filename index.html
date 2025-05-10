@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<title>Modern Portfolio</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+  /* Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html, body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    color: #f0f0f0;
+    height: 100%;
+    overflow-x: hidden;
+  }
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    min-height: 100vh;
+  }
+  .container {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    max-width: 900px;
+    width: 100%;
+    box-shadow: 0 8px 32px 0 rgba(31,38,135,0.37);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 25px 40px 40px 40px;
+  }
+  header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  header h1 {
+    font-weight: 600;
+    font-size: 3rem;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+  }
+  header p {
+    color: #d2d2d2;
+    font-weight: 300;
+    font-size: 1.2rem;
+  }
+  .profile-pic {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #fff;
+    margin: 0 auto 20px auto;
+    display: block;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+  }
+  main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+  @media(max-width: 600px) {
+    main {
+      grid-template-columns: 1fr;
+    }
+  }
+  section {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+  }
+  section h2 {
+    border-bottom: 2px solid #fff;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    font-size: 1.6rem;
+  }
+  .about p {
+    font-weight: 300;
+    line-height: 1.6;
+    color: #eee;
+    font-size: 1rem;
+  }
+  .skills-list, .projects-list {
+    list-style: none;
+  }
+  .skills-list li {
+    background: #2575fc;
+    padding: 8px 15px;
+    margin: 6px 6px 6px 0;
+    border-radius: 12px;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 10px rgba(37, 117, 252, 0.4);
+    cursor: default;
+    transition: background 0.3s ease;
+  }
+  .skills-list li:hover {
+    background: #6a11cb;
+  }
+  .projects-list li {
+    margin-bottom: 15px;
+    border-left: 4px solid #2575fc;
+    padding-left: 15px;
+  }
+  .projects-list li:last-child {
+    margin-bottom: 0;
+  }
+  .project-title {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: #e2e2e2;
+  }
+  .project-description {
+    font-weight: 300;
+    font-size: 0.95rem;
+    color: #ccc;
+  }
+  footer {
+    margin-top: 40px;
+    text-align: center;
+    font-weight: 300;
+    color: #bbb;
+    font-size: 0.9rem;
+  }
+  a.social-link {
+    color: #d2d2d2;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1.4rem;
+    transition: color 0.3s ease;
+  }
+  a.social-link:hover {
+    color: #fff;
+  }
+</style>
+</head>
+<body>
+  <div class="container" role="main">
+    <header>
+      <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Profile Picture" class="profile-pic" />
+      <h1>Alexandra Dewi</h1>
+      <p>Frontend Developer & Designer</p>
+      <nav aria-label="Social media links" style="margin-top:10px;">
+        <a href="#" class="social-link" aria-label="Twitter" title="Twitter" target="_blank" rel="noopener noreferrer">🐦</a>
+        <a href="#" class="social-link" aria-label="LinkedIn" title="LinkedIn" target="_blank" rel="noopener noreferrer">🔗</a>
+        <a href="#" class="social-link" aria-label="GitHub" title="GitHub" target="_blank" rel="noopener noreferrer">🐙</a>
+      </nav>
+    </header>
+    <main>
+      <section class="about" aria-label="About me">
+        <h2>About Me</h2>
+        <p>
+          Passionate frontend developer with 5+ years of experience crafting beautiful, modern, 
+          and responsive websites and web apps. Focused on clean code, innovative design, 
+          and seamless user experience.
+        </p>
+      </section>
+      <section class="skills" aria-label="Skills">
+        <h2>Skills</h2>
+        <ul class="skills-list" aria-live="polite">
+          <li>HTML5</li>
+          <li>CSS3 & Sass</li>
+          <li>JavaScript ES6+</li>
+          <li>React.js</li>
+          <li>Vue.js</li>
+          <li>TypeScript</li>
+          <li>Figma Design</li>
+          <li>Responsive Design</li>
+        </ul>
+      </section>
+      <section class="projects" aria-label="Projects">
+        <h2>Projects</h2>
+        <ul class="projects-list">
+          <li>
+            <div class="project-title">Weather App</div>
+            <div class="project-description">
+              A modern weather forecasting app built with React and OpenWeatherMap API.
+            </div>
+          </li>
+          <li>
+            <div class="project-title">Portfolio Website</div>
+            <div class="project-description">
+              A responsive portfolio site featuring animations and smooth navigation.
+            </div>
+          </li>
+          <li>
+            <div class="project-title">E-commerce Landing</div>
+            <div class="project-description">
+              A clean, modern landing page for an online store with product filtering.
+            </div>
+          </li>
+        </ul>
+      </section>
+    </main>
+    <footer>
+      &copy; 2024 Alexandra Dewi &nbsp;&bull;&nbsp; Made with ❤️ and code
+    </footer>
+  </div>
+</body>
+</html>
+
+```
